@@ -1,6 +1,9 @@
-FROM python:3.10-bullseye
+FROM python:3.10-alpine
 
 WORKDIR /app
+
+RUN apk update
+RUN apk add make automake gcc g++ python3-dev
 
 COPY requirements.txt requirements.txt
 
